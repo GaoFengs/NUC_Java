@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class UnusualAdd {
+	public int addAB(int a, int b) {
+		 if(b==0)  
+		        return a;  
+		  int sum=a^b;  //二进制运算，异或运算，相同则为0，不同则为一 ，取个位 
+		  int carry=(a&b)<<1;  
+		 return addAB(sum,carry);//递归调用 
+    }
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		UnusualAdd u=new UnusualAdd();
+		int a=0,b=0;
+		Scanner sc=new Scanner(System.in);
+		a=sc.nextInt();
+		b=sc.nextInt();
+		System.out.println(u.addAB(a, b));
+	}
+
+}
