@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class Transform {
+    public int calcCost(int A, int B) {
+        int C=A&B;
+        int D=A|B;
+        int E=A^B;
+        E=(int)E;
+        int count=0; 
+        while (E!=0)  
+        {  
+            count++;  
+            E=E&(E-1);
+        } 
+        return count;
+    }
+    public static void main(String[] args){
+    	Transform t=new Transform();
+    	Scanner sc=new Scanner(System.in);
+    	int A=sc.nextInt();
+    	int B=sc.nextInt();
+    	System.out.println(t.calcCost(A, B));
+    }
+}
