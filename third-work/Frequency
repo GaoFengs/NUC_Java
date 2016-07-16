@@ -1,0 +1,17 @@
+public class Frequency {
+    public int getFrequency(String[] article, int n, String word) {
+        // write code here
+        int cont=0;
+        for(int i=0;i<n;i++){
+            if(article[i].equals(word))
+                cont++;
+        }
+        return cont;
+    }
+    public static void main(String[] args){
+        Frequency f=new Frequency();
+        String[] article=new String[]{"I","I","love","love","love","java"};
+        String word="love";
+        System.out.println(f.getFrequency(article,article.length,word));
+    }
+}
